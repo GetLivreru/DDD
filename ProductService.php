@@ -9,7 +9,7 @@ class ProductService
         $this->repository = $repository;
     }
 
-    public function createOrUpdate(ProductDTO $dto)
+    public function createOrUpdate(ProductDTO $dto): Product
     {
         $product = $this->repository->findByCode($dto->code);
         if ($product) {
